@@ -1,10 +1,111 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact Me</title>
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact-me.css">
+</head>
+<body>
 
-  <body>
-    <!-- TODO -->
-  </body>
+  <p style="font-size: 24px; font-weight: bold;">
+    Contact form <span style="font-size: 36px;"></span>
+</p>
+
+<form action="file:///C:/Users/eu/github-classroom/UWC2-JSCRIPT/au23-310-class-7-exercises-vasilevisovan/contact-me.html" method="post" style="width: 80%; max-width: 400px; margin: auto; margin-left: 20px; margin-right: 20px;">
+
+    <div class="contact-form">
+        <label for="first-name">First name:</label>
+        <input
+          id="first-name"
+          class="form-control validate-input"
+          type="text"
+          name="first-name"
+          required
+        />
+        <small class="error" aria-live="polite"></small>
+    </div>
+
+    <div class="contact-form">
+        <label for="last-name">Last name:</label>
+        <input
+          id="last-name"
+          class="form-control validate-input"
+          type="text"
+          name="last-name"
+          required
+        />
+        <small class="error" aria-live="polite"></small>
+    </div>
+
+    <div class="contact-form">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          class="form-control validate-input"
+          type="email"
+          name="email"
+          required
+        />
+        <small class="error" aria-live="polite"></small>
+    </div>
+
+
+<div class="contact-form">
+    <label for="inquiry-type">Reason for contacting</label>
+    <select id="inquiry-type" class="form-control validate-input" name="inquiry-type" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="job-opportunity">Job Opportunity</option>
+        <option value="talk-code">Talk Code</option>
+    </select>
+</div>
+
+<div class="contact-form job-opportunity hidden">
+    <label for="job-title">Job Title</label>
+    <input 
+    id="job-title" 
+    class="form-control validate-input" 
+    type="text" name="job-title"
+    required
+    />
+
+    <label for="company-website">Company Website</label>
+    <input 
+    id="company-website" 
+    class="form-control validate-input" 
+    type="url"
+     name="company-website"
+     required
+     />
+  <small class="error" aria-live="polite"></small>
+</div>
+
+<div class="contact-form talk-code hidden">
+  <label for="kind">Coding language</label>
+  <select id="contact-kind" class="form-control" name="kind" required>
+    <option value="choose" selected="selected" disabled>Choose one</option>
+    <option value="turbo-pascal">Turbo Pascal</option>
+    <option value="c-plus-plus">C++</option>
+    <option value="java-script">Java Script</option>
+  </select>
+  <small class="error" aria-live="polite"></small>  
+</div>
+
+
+<div class="contact-form">
+    <label for="user-message">Your Message (up to 50 characters)</label>
+    <input 
+    id="user-message" 
+    class="form-control validate-input" 
+    type="text"
+    name="user-message"
+    maxlength="50" 
+    required />
+    <small class="error" aria-live="polite"></small>
+
+    <button type="submit">Submit</button>
+</div>
+<script src="contact-me.js"></script>
+
+</body>
 </html>
