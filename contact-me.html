@@ -21,6 +21,7 @@
           class="form-control validate-input"
           type="text"
           name="first-name"
+          minlength="3"
           required
         />
         <small class="error" aria-live="polite"></small>
@@ -33,22 +34,25 @@
           class="form-control validate-input"
           type="text"
           name="last-name"
+          minlength="3"
           required
         />
         <small class="error" aria-live="polite"></small>
     </div>
 
     <div class="contact-form">
-        <label for="email">Email:</label>
-        <input
+      <label for="email">Email:</label>
+      <input
           id="email"
           class="form-control validate-input"
           type="email"
           name="email"
+          pattern="\w+@\w+\.\w+"
           required
-        />
-        <small class="error" aria-live="polite"></small>
-    </div>
+          title="Please enter a valid email address (e.g., example@example.com)"
+      />
+      <small class="error" aria-live="polite"></small>
+  </div>
 
 
 <div class="contact-form">
@@ -68,16 +72,19 @@
     type="text" name="job-title"
     required
     />
+    <!--<small class="error"aria-live="polite"></small>-->
+    <span class="error" id="job-titleError"></span>
 
     <label for="company-website">Company Website</label>
     <input 
     id="company-website" 
     class="form-control validate-input" 
     type="url"
-     name="company-website"
-     required
-     />
-  <small class="error" aria-live="polite"></small>
+    name="company-website"
+    pattern="https?://.+"
+    required
+    />
+  <small class="error"aria-live="polite"></small>
 </div>
 
 <div class="contact-form talk-code hidden">
@@ -93,13 +100,14 @@
 
 
 <div class="contact-form">
-    <label for="user-message">Your Message (up to 50 characters)</label>
+    <label for="user-message">Your Message (min 10 characters-max 20 characters)</label>
     <input 
     id="user-message" 
     class="form-control validate-input" 
     type="text"
     name="user-message"
-    maxlength="50" 
+    minlength="10"
+    maxlength="20"
     required />
     <small class="error" aria-live="polite"></small>
 
