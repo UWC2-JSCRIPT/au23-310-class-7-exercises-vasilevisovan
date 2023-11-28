@@ -5,7 +5,7 @@
     document.querySelector('.talk-code').classList.add('hidden');
 
     // Show the selected additional section
-    var selectedOption = this.value;
+    const selectedOption = this.value;
     if (selectedOption === 'job-opportunity') {
         document.querySelector('.job-opportunity').classList.remove('hidden');
     } else if (selectedOption === 'talk-code') {

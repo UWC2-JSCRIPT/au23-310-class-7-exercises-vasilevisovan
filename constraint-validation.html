@@ -11,56 +11,91 @@
     <link rel="stylesheet" href="constraint-validation.css" />
   </head>
 
-  <body>
+  <body style="background-color: lightblue;">
     <div class="container">
-      <h1>Connect With Us</h1>
-      <form id="connect-form" action="">
+      <h1 style="color: darkblue">Connect With Us</h1>
+      <!--<form id="connect-form" action="">-->
+  <form 
+action="file:///C:/Users/eu/github-classroom/UWC2-JSCRIPT/au23-310-class-7-exercises-vasilevisovan/contact-me.html" 
+method="post" 
+style="width: 80%; max-width: 400px; margin: auto; margin-left: 20px; margin-right: 20px;">
         <div class="form-group">
-          <label for="first-name">First Name</label>
+          <label for="first-name" style="color:blue">First Name</label>
           <input
             id="first-name"
             class="form-control validate-input"
             type="text"
             name="first-name"
+            minlength="3"
             
           />
           <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
-          <label for="last-name">Last Name</label>
+          <label for="last-name" style="color:yellow">Last Name</label>
           <input
             id="last-name"
             class="form-control validate-input"
             type="text"
             name="last-name"
+            minlength="3"
             
           />
           <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email" style="color:red">Email</label>
           <input
             id="email"
             class="form-control validate-input"
             type="email"
             name="email"
+            pattern="\w+@\w+\.\w+"
+            required
+            title="Please enter a valid email address (e.g., example@example.com)"
           />
           <small class="error" aria-live="polite"></small>
         </div>
 
         <div class="form-group">
-          <label for="kind">What can we help with?</label>
-          <select class="form-control" name="kind" id="contact-kind">
-            <option value="choose" selected="selected" disabled>
+          <label for="inquiry-type" style="color:blue">What can we help with?</label>
+          <select class="form-control" name="inquiry-type" id="inquiry-type">
+            <option value="choose" selected="selected" disabled style="color: yellow">
               Choose one
             </option>
-            <option value="business">I'm interested in your software</option>
-            <option value="technical">I need technical support</option>
+            <option value="business" style="color:red">I'm interested in your software</option>
+            <option value="technical" style="color:blue">I need technical support</option>
           </select>
           <small class="error" aria-live="polite"></small>
         </div>
+
+
+        <div class="form-group business hidden">
+          <label for="software-selection" style="color:blue">Which software do you want to select</label>
+          <select id="software-selection" class="form-control" name="software-selection" required>
+            <option value="choose" selected="selected" disabled style="color:yellow">Choose one</option>
+            <option value="turbo-pascal" style="color:yellow">Turbo Pascal</option>
+            <option value="c-plus-plus" style="color:red">C++</option>
+            <option value="java-script" style="color:blue">Java Script</option>
+          </select>
+          <small class="error" aria-live="polite"></small>  
+        </div>
+
+
+        <div class="form-group technical hidden">
+          <label for="service-selection" style="color:yellow">For what type of service</label>
+          <select id="contact-service-selection" class="form-control" name="service-selection" required>
+            <option value="choose" selected="selected" disabled>Choose one</option>
+            <option value="turbo-pascal" style="color:red">Software related issues</option>
+            <option value="c-plus-plus" style="color:blue">Hardware related issues</option>
+            
+          </select>
+          <small class="error" aria-live="polite"></small>  
+        </div>
+
+
 
         <div class="form-check mb-3">
           <input
@@ -69,12 +104,12 @@
             name="yes-newsletter"
           />
           <label class="form-check-label" for="yes-newsletter"
-            >Join Newsletter?
+          style="color:yellow">Join Newsletter?
           </label>
         </div>
 
         <div class="form-group">
-          <label for="doge">How much DogeCoin u donate me?</label>
+          <label for="doge" style="color:red">How much DogeCoin u donate me?</label>
           <input type="number" id="doge" min=20>
         </div>
 
